@@ -29,11 +29,11 @@ jobs:
         id: push_directory
         uses: cpina/github-action-push-to-another-repository@main
         env:
-          API_TOKEN_GITHUB: ${{ secrets.SSH_DEPLOY_KEY }}
+          SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
         with:
           source-directory: sub/subsub/
-          destination-github-username: 'robdecker'
-          destination-repository-name: 'ghactions2'
+          destination-github-username: robdecker
+          destination-repository-name: ghactions2
           user-email: rob@deckerdev.com
           commit-message: See ORIGIN_COMMIT from $GITHUB_REF
           target-branch: main
